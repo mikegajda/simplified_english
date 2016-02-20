@@ -29,6 +29,7 @@ def pronunciation(word):
 	return pr.decode("utf-8").replace(u"\u02C8", "").encode("utf-8") #continues to clean up the pronunciation and encodes as UTF-8
 
 def clean_up(word):
+	"""Accepts a word and then returns it cleaned up by taking out some extraneous characters"""
 	if len(word) == 1:
 		return word
 	else:
@@ -40,6 +41,7 @@ def clean_up(word):
 			return word[0] + clean_up(word[1:])
 
 def vowel_list(word):
+	"""Checks which vowels are in the list"""
 	my_list = []
 	for character in word:
 		if character in "aeiou-":
